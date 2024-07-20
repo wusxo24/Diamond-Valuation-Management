@@ -100,7 +100,7 @@ app.post('/api/webhook', express.raw({type: 'application/json'}), async (request
 
 
 app.use(cors({
-  origin: 'http://localhost:5173', 
+  origin: 'https://diamond-valuation-management-nine.vercel.app', 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true
 }));
