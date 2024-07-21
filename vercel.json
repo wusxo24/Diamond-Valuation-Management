@@ -1,0 +1,39 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "client/vite.config.js",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "dist"
+        }
+      },
+      {
+        "src": "server/index.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "server/main.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/server/index.js"
+      },
+      {
+        "src": "/python/(.*)",
+        "dest": "/server/main.py"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/client/dist/$1"
+      }
+    ],
+    "env": {
+      "MONGO_URL": "mongodb+srv://admin:TNsb5tyrOvEJbKW5@backenddb.c619lfz.mongodb.net/DB?retryWrites=true&w=majority&appName=BackendDB",
+      "VITE_API_URL": "https://diamond-valuation-management-backend.vercel.app"
+    }
+  }
+  
