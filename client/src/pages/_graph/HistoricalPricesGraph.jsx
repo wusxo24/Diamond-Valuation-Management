@@ -1,16 +1,16 @@
-// client/src/pages/HistoricalPricesGraph.jsx
-
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
-import { Box, Typography, CircularProgress } from '@mui/material';
+import { Box, Typography, CircularProgress, IconButton } from '@mui/material';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const HistoricalPricesGraph = () => {
   const { shape } = useParams();
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -55,8 +55,19 @@ const HistoricalPricesGraph = () => {
     },
   };
 
+  const handleBack = () => {
+    navigate(-1);
+  };
+
   return (
     <Box sx={{ p: 3 }}>
+      <IconButton 
+        color="primary" 
+        onClick={handleBack}
+        sx={{ mb: 2 }}
+      >
+        <ArrowBackIcon />
+      </IconButton>
       <Typography variant="h4" gutterBottom>
         Historical Diamond Prices ({shape.charAt(0).toUpperCase() + shape.slice(1)} Shape)
       </Typography>

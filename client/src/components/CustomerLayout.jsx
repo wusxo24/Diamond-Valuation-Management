@@ -186,11 +186,7 @@ const theme = useTheme();
     </div>
   </Drawer>
 )}
-
-
         {children}
-
-
       <footer style={{ backgroundColor: '#021732', color: 'white', padding: '20px 0' }}>
         <Container maxWidth="lg">
           <Grid container spacing={4}>

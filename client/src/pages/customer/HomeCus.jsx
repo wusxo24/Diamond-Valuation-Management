@@ -31,8 +31,8 @@ const HeroSection = styled(Box)(({ theme, backgroundImage }) => ({
   backgroundImage: `url(${backgroundImage})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
-  width: '100%', // Adjusted width to cover more area for large screens
-  height: '80vh', // Maintain the height for consistency
+  width: '95.8%', // Adjusted width to cover more area for large screens
+  height: '100vh', // Maintain the height for consistency
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -102,7 +102,6 @@ const HomeCus = () => {
   }, []);
 
   return (
-    <PageContainer>
       <CustomerLayout>
         <HeroSection backgroundImage={images[currentImageIndex]}>
           <Typography variant="h3" component="h1" gutterBottom sx={{ color: 'white', fontWeight: 'bold' }}>
@@ -199,7 +198,7 @@ const HomeCus = () => {
           </Grid>
         </HowItWorksSection>
       </CustomerLayout>
-    </PageContainer>
+
   );
 };
 

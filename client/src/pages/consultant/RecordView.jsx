@@ -12,7 +12,8 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  TablePagination
+  TablePagination,
+  Button
 } from '@mui/material';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
@@ -112,10 +113,19 @@ const RecordView = () => {
                           mr: 1
                         }}
                       /> 
-
-                      <button onClick={() => handleViewStatus(record._id)}>
+                      <Button
+                        variant="text"
+                        size="small"
+                        onClick={() => handleViewStatus(record._id)}
+                        sx={{
+                          textTransform: 'none',
+                          padding: 0,
+                          minWidth: 'auto',
+                          color:'black'
+                        }}
+                      >
                         {record.status}
-                      </button>
+                      </Button>
                       
                     </Box>
                   </TableCell>

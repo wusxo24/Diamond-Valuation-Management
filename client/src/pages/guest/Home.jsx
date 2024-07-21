@@ -31,7 +31,7 @@ const HeroSection = styled(Box)(({ theme, backgroundImage }) => ({
   backgroundImage: `url(${backgroundImage})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
-  width: '100%', // Adjusted width to cover more area for large screens
+  width: '95.8%', // Adjusted width to cover more area for large screens
   height: '80vh', // Maintain the height for consistency
   display: 'flex',
   flexDirection: 'column',

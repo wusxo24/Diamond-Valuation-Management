@@ -65,7 +65,7 @@ const AboutUsGuest = () => {
         flexDirection="column"
         alignItems="center"
         sx={{
-          width: '100%',
+          width: '97%',
           padding: '50px 20px',
           textAlign: 'center',
           marginTop: '90px'
