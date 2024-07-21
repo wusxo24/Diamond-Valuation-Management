@@ -87,7 +87,7 @@ class DiamondCNN(nn.Module):
     
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 cnn_model = DiamondCNN().to(device)
-cnn_model.load_state_dict(torch.load('diamond_cnn_01.pth'))
+cnn_model.load_state_dict(torch.load('diamond_cnn_01.pth'),map_location='cpu')
 cnn_model.eval()
 
 # Load the label encoders
@@ -183,7 +183,7 @@ class Net(nn.Module):
 input_size = 29  # Adjust this based on the number of input features
 num_classes = 1
 mlp_model = Net(input_size, num_classes)
-mlp_model.load_state_dict(torch.load('diamond_price_model_02.pth'),map_location=torch.device('cpu'))
+mlp_model.load_state_dict(torch.load('diamond_price_model_02.pth'),map_location='cpu')
 mlp_model.eval()
 
 @app.post("/predict-price/")
